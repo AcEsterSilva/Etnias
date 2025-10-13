@@ -1,1 +1,85 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fonte e cor base */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header e navegação */
+header {
+  background-color: #2b6cb0;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+nav a:hover, nav a.active {
+  text-decoration: underline;
+}
+
+/* Seções de conteúdo */
+.content-section {
+  background-color: #fff;
+  padding: 40px 30px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+/* Garante que o texto fique em bloco contínuo, sem colunas */
+.content-section p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  text-align: justify;
+  display: block;
+  column-count: 1 !important;
+  column-gap: normal !important;
+  flex-direction: initial !important;
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #2d3748;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 
