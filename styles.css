@@ -112,34 +112,25 @@ main {
     color: #3b2a1f;
 }
 
-/* ======== IMAGENS ======== */
-.img-box {
-    width: 90%;
-    max-width: 400px;
+/* ======== ESTILO UNIFICADO PARA IMAGENS ======== */
+main img,
+.content-section img,
+.lideranca-card img {
+    max-width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border-radius: 10px;
+    display: block;
     margin: 1.5em auto;
-    border: 4px solid #a62814;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fffaf3;
-}
-
-.img-box img {
-    width: 100%;
-    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     object-fit: cover;
     object-position: center;
-    display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 }
 
-.img-box:hover img {
-    transform: scale(1.08);
+main img:hover,
+.content-section img:hover,
+.lideranca-card img:hover {
+    transform: scale(1.03);
 }
 
 /* ======== RODAPÉ ======== */
@@ -204,9 +195,113 @@ a:hover {
     header h1 {
         font-size: 1.8em;
     }
+}
 
-    .img-box {
-        width: 100%;
-        max-width: 100%;
-    }
+/* ======== PERSONAGEM INDÍGENA ESTILIZADO ======== */
+.character {
+    position: relative;
+    width: 100px;
+    height: 200px;
+    margin: 2em auto;
+}
+
+/* Corpo */
+.character .body {
+    width: 60px;
+    height: 100px;
+    background: #a0522d;
+    border-radius: 30px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Cabeça */
+.character .head {
+    width: 60px;
+    height: 60px;
+    background: #d2a679;
+    border-radius: 50%;
+    position: absolute;
+    top: -60px;
+    left: 0;
+    z-index: 2;
+    border: 3px solid #8b4513;
+}
+
+/* Cocar ou cabelo estilizado */
+.character .hair {
+    width: 80px;
+    height: 20px;
+    background: linear-gradient(90deg, #d89b00, #a62814);
+    border-radius: 10px;
+    position: absolute;
+    top: -70px;
+    left: -10px;
+    transform: rotate(-10deg);
+    z-index: 3;
+}
+
+/* Braços */
+.character .arm {
+    width: 15px;
+    height: 70px;
+    background: #a0522d;
+    position: absolute;
+    top: 20px;
+    border-radius: 10px;
+}
+
+.character .arm.left {
+    left: -15px;
+    transform: rotate(20deg);
+}
+
+.character .arm.right {
+    right: -15px;
+    transform: rotate(-20deg);
+}
+
+/* Pernas */
+.character .leg {
+    width: 20px;
+    height: 70px;
+    background: #8b4513;
+    position: absolute;
+    bottom: -70px;
+    border-radius: 10px;
+}
+
+.character .leg.left {
+    left: 5px;
+}
+
+.character .leg.right {
+    right: 5px;
+}
+
+/* Acessórios decorativos (pulseiras ou braceletes) */
+.character .bracelet {
+    width: 25px;
+    height: 5px;
+    background: #d89b00;
+    position: absolute;
+    border-radius: 2px;
+}
+
+.character .bracelet.left {
+    top: 40px;
+    left: -20px;
+    transform: rotate(10deg);
+}
+
+.character .bracelet.right {
+    top: 40px;
+    right: -20px;
+    transform: rotate(-10deg);
+}
+
+/* Pequeno efeito de hover */
+.character:hover .body {
+    transform: scale(1.05);
 }
