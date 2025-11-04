@@ -1,7 +1,6 @@
 # 🌿 Guardião da Diversidade: Etnias Indígenas do Brasil
 
-![Banner do Site](https://acestersilva.github.io/Etnias/assets/banner.png)  
-
+  
 **Link do Projeto:** [https://acestersilva.github.io/Etnias/](https://acestersilva.github.io/Etnias/)
 
 ---
