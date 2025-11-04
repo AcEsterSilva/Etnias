@@ -143,3 +143,21 @@ a:hover {
         font-size: 1.8em;
     }
 }
+/* ======== IMAGENS ======== */
+.img-box {
+    width: 100%;               /* ocupa toda a largura do contêiner pai */
+    max-width: 300px;          /* ou outro tamanho fixo, se quiser */
+    height: 200px;             /* altura padronizada */
+    overflow: hidden;          /* corta o que passar da caixa */
+    border-radius: 8px;        /* arredonda as bordas, opcional */
+    margin: 10px auto;         /* centraliza e dá espaçamento */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* mantém o enquadramento sem distorcer */
+    object-position: center;   /* centraliza o corte */
+    display: block;            /* remove espaçamento indesejado */
+}
