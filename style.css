@@ -8,23 +8,25 @@
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     line-height: 1.6;
-    background-color: #fffaf3; /* tom suave de pergaminho */
+    background: linear-gradient(180deg, #fffaf3 0%, #fff3e0 100%);
     color: #2b2b2b;
 }
 
 /* ======== CABEÇALHO ======== */
 header {
-    background-color: #6b3e1e; /* marrom-terra */
+    background: linear-gradient(135deg, #5a2d0c 0%, #8b4513 100%); /* marrom-terra sofisticado */
     color: #fff;
     text-align: center;
-    padding: 1.5em 0;
+    padding: 1.8em 0 1.4em 0;
     border-bottom: 5px solid #d89b00; /* dourado-buriti */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 header h1 {
     font-family: 'Georgia', serif;
-    font-size: 2em;
+    font-size: 2.4em;
     letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 }
 
 /* ======== MENU DE NAVEGAÇÃO ======== */
@@ -33,72 +35,111 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #d89b00; /* amarelo-buriti */
-    padding: 0.5em 0;
+    background: linear-gradient(90deg, #d89b00 0%, #c68900 100%);
+    padding: 0.6em 0;
+    box-shadow: inset 0 -2px 6px rgba(0,0,0,0.1);
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 6px 12px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-weight: bold;
-    padding: 8px 14px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background-color: transparent;
 }
 
 nav ul li a:hover {
     background-color: #a62814; /* vermelho-urucum */
+    box-shadow: 0 0 8px rgba(166, 40, 20, 0.5);
+    transform: translateY(-2px);
 }
 
 nav ul li a.active {
-    background-color: #a62814; /* destaque na página atual */
+    background-color: #a62814; /* destaque da página atual */
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
 }
 
 /* ======== CONTEÚDO PRINCIPAL ======== */
 main {
     max-width: 1000px;
-    margin: 2em auto;
-    padding: 1.5em;
-    background-color: #fff8e1; /* tom de papel natural */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 3em auto;
+    padding: 2em;
+    background-color: #fffdf5; /* papel claro */
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+main:hover {
+    transform: scale(1.01);
 }
 
 .content-section h2 {
     color: #a62814; /* vermelho-urucum */
     text-align: center;
     margin-bottom: 1em;
+    font-size: 1.8em;
+    border-bottom: 2px solid #d89b00;
+    display: inline-block;
+    padding-bottom: 0.3em;
 }
 
 .content-section p {
     text-align: justify;
     margin-bottom: 1em;
-    font-size: 1.05em;
+    font-size: 1.08em;
+    color: #3b2a1f;
 }
 
 /* ======== RODAPÉ ======== */
 footer {
-    background-color: #6b3e1e;
+    background: linear-gradient(135deg, #5a2d0c 0%, #8b4513 100%);
     color: #fff;
     text-align: center;
     padding: 1em 0;
-    margin-top: 2em;
+    margin-top: 3em;
     border-top: 5px solid #d89b00;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
 }
 
 footer p {
-    font-size: 0.9em;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
 }
 
-/* ======== LINKS ======== */
+/* ======== LINKS GERAIS ======== */
 a {
     color: #a62814;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     color: #6b3e1e;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+
+    main {
+        margin: 1.5em;
+        padding: 1.5em;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
 }
