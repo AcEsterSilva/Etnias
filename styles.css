@@ -10,16 +10,36 @@ body {
     line-height: 1.6;
     background: linear-gradient(180deg, #fffaf3 0%, #fff3e0 100%);
     color: #2b2b2b;
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+    background-repeat: repeat;
 }
 
 /* ======== CABEÇALHO ======== */
 header {
-    background: linear-gradient(135deg, #5a2d0c 0%, #8b4513 100%); /* marrom-terra sofisticado */
+    background: linear-gradient(135deg, #5a2d0c 0%, #8b4513 100%);
     color: #fff;
     text-align: center;
     padding: 1.8em 0 1.4em 0;
-    border-bottom: 5px solid #d89b00; /* dourado-buriti */
+    border-bottom: 8px solid #d89b00;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* Faixa decorativa com padrão geométrico indígena */
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-image: repeating-linear-gradient(
+        45deg,
+        #d89b00 0,
+        #d89b00 10px,
+        #a62814 10px,
+        #a62814 20px
+    );
 }
 
 header h1 {
@@ -54,15 +74,11 @@ nav ul li a {
     background-color: transparent;
 }
 
-nav ul li a:hover {
-    background-color: #a62814; /* vermelho-urucum */
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #a62814;
     box-shadow: 0 0 8px rgba(166, 40, 20, 0.5);
     transform: translateY(-2px);
-}
-
-nav ul li a.active {
-    background-color: #a62814; /* destaque da página atual */
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
 }
 
 /* ======== CONTEÚDO PRINCIPAL ======== */
@@ -70,24 +86,23 @@ main {
     max-width: 1000px;
     margin: 3em auto;
     padding: 2em;
-    background-color: #fffdf5; /* papel claro */
+    background-color: #fffdf5;
     border-radius: 12px;
     box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-}
-
-main:hover {
-    transform: scale(1.01);
+    border: 4px solid #d89b00;
+    background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
 }
 
 .content-section h2 {
-    color: #a62814; /* vermelho-urucum */
+    color: #a62814;
     text-align: center;
     margin-bottom: 1em;
     font-size: 1.8em;
-    border-bottom: 2px solid #d89b00;
+    border-bottom: 3px solid #d89b00;
     display: inline-block;
     padding-bottom: 0.3em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .content-section p {
@@ -97,6 +112,36 @@ main:hover {
     color: #3b2a1f;
 }
 
+/* ======== IMAGENS ======== */
+.img-box {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 1.5em auto;
+    border: 4px solid #a62814;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffaf3;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.img-box:hover img {
+    transform: scale(1.08);
+}
+
 /* ======== RODAPÉ ======== */
 footer {
     background: linear-gradient(135deg, #5a2d0c 0%, #8b4513 100%);
@@ -104,8 +149,25 @@ footer {
     text-align: center;
     padding: 1em 0;
     margin-top: 3em;
-    border-top: 5px solid #d89b00;
+    border-top: 8px solid #d89b00;
+    position: relative;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #d89b00 0,
+        #d89b00 10px,
+        #a62814 10px,
+        #a62814 20px
+    );
 }
 
 footer p {
@@ -142,22 +204,9 @@ a:hover {
     header h1 {
         font-size: 1.8em;
     }
-}
-/* ======== IMAGENS ======== */
-.img-box {
-    width: 100%;               /* ocupa toda a largura do contêiner pai */
-    max-width: 300px;          /* ou outro tamanho fixo, se quiser */
-    height: 200px;             /* altura padronizada */
-    overflow: hidden;          /* corta o que passar da caixa */
-    border-radius: 8px;        /* arredonda as bordas, opcional */
-    margin: 10px auto;         /* centraliza e dá espaçamento */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
 
-.img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;         /* mantém o enquadramento sem distorcer */
-    object-position: center;   /* centraliza o corte */
-    display: block;            /* remove espaçamento indesejado */
+    .img-box {
+        width: 100%;
+        max-width: 100%;
+    }
 }
